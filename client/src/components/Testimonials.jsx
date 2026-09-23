@@ -5,18 +5,21 @@ export default function Testimonials() {
   return (
     <div className="py-28 px-6 md:px-16 lg:px-24 xl:px-44 flex flex-col items-center justify-center">
       <div className="text-center mb-18">
-        <Title title="What Our Customers Say" subtitle="Discover why discerning travelers choose StayVenture for their luxury accommodations around the world."/>
+        <Title
+          title="What Our Customers Say"
+          subtitle="Discover why discerning travelers choose StayVenture for their luxury accommodations around the world."
+        />
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {/* Testimonial 1 */}
         <div className="w-full max-w-88 space-y-4 rounded-md border border-gray-200 bg-white p-3 text-gray-500 transition-all duration-300 hover:-translate-y-1">
           <div className="flex items-center justify-between">
             <div className="flex gap-1">
-              <img src={assets.star_icon} alt="star icon" />
-              <img src={assets.star_icon} alt="star icon" />
-              <img src={assets.star_icon} alt="star icon" />
-              <img src={assets.star_icon} alt="star icon" />
-              <img src={assets.star_icon} alt="star icon" />
+              {Array(5)
+                .fill(0)
+                .map((_, index) => (
+                  <img key={index} src={assets.star_icon} alt="star icon" />
+                ))}
             </div>
             <p>12 Jan 2025</p>
           </div>

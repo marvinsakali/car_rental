@@ -1,12 +1,15 @@
 import React from "react";
 import { assets } from "../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const CarCard = ({ car }) => {
   const currency = import.meta.env.VITE_CURRENCY;
+  const navigate = useNavigate()
   return (
     <div
       className="group rounded-xl transition-all duration-500 shadow-lg 
     hover:-translate-y-1 overflow-hidden cursor-pointer"
+    onClick={()=> {navigate(`/cars/${car._id}`)}}
     >
       <div className="relative h-48 overflow-hidden">
         <img
