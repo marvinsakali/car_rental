@@ -1,34 +1,218 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
-import Footer from '../components/Footer'
-import Title from '../components/Title'
-import { assets, dummyCarData } from '../assets/assets'
-import CarCard from "../components/CarCard"
+import React from "react";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import Title from "../components/Title";
+import { assets, dummyCarData } from "../assets/assets";
+import CarCard from "../components/CarCard";
 
 const Cars = () => {
   return (
-    <div>
-      <NavBar/>
+    <div className="min-h-screen bg-slate-50">
+      <header className="h-[70px] border-b border-gray-200 bg-white flex items-center">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
+          {/* Search */}
+          <div className="flex items-center gap-3 w-full max-w-xl h-11 rounded-xl border border-gray-200 bg-white px-4 ">
+            <img src={assets.search_icon} className="w-4 h-4" alt="Search" />
 
-      <div className='py-20  bg-light'>
-        <Title title="Available cars" subtitle="Browse our selection of premium vehicles available for your next adventure"/>
-        <div className='flex gap-2 items-center w-full shadow justify-between   mx-auto rounded-full border h-12 mt-6 max-w-140 px-4 bg-white border-borderColor'>
-          <img src={assets.search_icon} className='h-4.5 w-4.5' alt="" />
-          <input type="text" className='w-full h-full focus:outline-none text-gray-500' />
-          <img src={assets.filter_icon} alt=""  className='h-4.5 w-4.5' />
-        </div>
-      </div>
+            <input
+              type="text"
+              placeholder="Search for a car"
+              className="w-full h-full text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none"
+            />
 
-      <div className="grid grod-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-8 md:px-16 lg:px-24 mt-18 xl:px-32">
-        {dummyCarData.map((car)=>(
-          <div key={car._id}>
-            <CarCard car={car} />
+            <button className="shrink-0">
+              <img src={assets.filter_icon} className="w-4 h-4" alt="Filter" />
+            </button>
           </div>
-        ))}
-      </div>
-      <Footer/>
-    </div>
-  )
-}
+        </div>
+      </header>
 
-export default Cars
+      <div className="grid lg:grid-cols-[260px_1fr] w-full mx-auto">
+        <aside className="hidden  lg:block border-r border-gray-200 bg-white">
+          <div className="sticky top-0 px-6 py-8">
+            <div className="flex items-center justify-between mb-8">
+              <h2 className="text-lg font-semibold text-gray-900">Filter By</h2>
+
+              <button className="text-xs font-medium text-gray-500 hover:text-black">
+                Clear
+              </button>
+            </div>
+
+            <div className="pb-6 mb-6 border-b border-gray-100">
+              <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                Model
+              </h3>
+
+              <div className="gap-3 grid grid-cols-2">
+                {["Toyota", "BMW", "Mercedes", "Audi"].map((model) => (
+                  <label
+                    key={model}
+                    className="flex items-center gap-3 cursor-pointer group"
+                  >
+                    <input
+                      type="checkbox"
+                      value={model}
+                      className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black"
+                    />
+
+                    <span className="text-sm text-gray-600 group-hover:text-gray-900">
+                      {model}
+                    </span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div className="pb-6 mb-6 border-b border-gray-100">
+              <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                Seats
+              </h3>
+
+              <div className="grid grid-cols-2 gap-3">
+                {[2, 4, 5, 7].map((seat) => (
+                  <label
+                    key={seat}
+                    className="flex items-center gap-2 cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      value={seat}
+                      className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black"
+                    />
+
+                    <span className="text-sm text-gray-600">{seat} Seats</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div className="pb-6 mb-6 border-b border-gray-100">
+              <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                Price Range
+              </h3>
+
+              <div className="flex items-center gap-2">
+                <div className="relative w-full">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">
+                    $
+                  </span>
+
+                  <input
+                    type="number"
+                    placeholder="Min"
+                    className="w-full rounded-lg border border-gray-200 bg-gray-50 px-7 py-2.5 text-sm focus:border-black focus:bg-white focus:outline-none"
+                  />
+                </div>
+
+                <span className="text-gray-400">—</span>
+
+                <div className="relative w-full">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-xs text-gray-400">
+                    $
+                  </span>
+
+                  <input
+                    type="number"
+                    placeholder="Max"
+                    className="w-full rounded-lg border border-gray-200 bg-gray-50 px-7 py-2.5 text-sm focus:border-black focus:bg-white focus:outline-none"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="pb-6 mb-6 border-b border-gray-100">
+              <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                Transmission
+              </h3>
+
+              <div className="space-y-3 grid grid-cols-2">
+                {["Automatic", "Manual", "Semi-Automatic"].map((type) => (
+                  <label
+                    key={type}
+                    className="flex items-center gap-3 cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      value={type}
+                      className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black"
+                    />
+
+                    <span className="text-sm text-gray-600">{type}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-sm font-semibold text-gray-900 mb-4">
+                Fuel Type
+              </h3>
+
+              <div className="space-y-3 grid grid-cols-2">
+                {["Petrol", "Diesel", "Electric", "Hybrid"].map((fuel) => (
+                  <label
+                    key={fuel}
+                    className="flex items-center gap-3 cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      value={fuel}
+                      className="w-4 h-4 rounded border-gray-300 text-black focus:ring-black"
+                    />
+
+                    <span className="text-sm text-gray-600">{fuel}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <button className="w-full rounded-lg bg-black py-3 text-sm font-medium text-white transition hover:bg-gray-800 active:scale-[0.98]">
+              Apply Filters
+            </button>
+          </div>
+        </aside>
+
+        <main className="min-w-0 px-4 py-8 md:px-8 ">
+          {/* Top Bar */}
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8">
+            <div>
+              <p className="text-xl font-semibold text-gray-900">
+                {dummyCarData.length} Cars Found
+              </p>
+
+              <p className="text-sm text-gray-500 mt-1">
+                Find the perfect car for your journey
+              </p>
+            </div>
+
+            {/* Sort */}
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-gray-500">Sort by</span>
+
+              <select
+                name="sort"
+                className="rounded-lg border border-borderColor bg-white px-3 py-2 text-sm text-gray-700 focus:outline-none"
+              >
+                <option value="recommended">Recommended</option>
+
+                <option value="price-low">Price: Low to High</option>
+
+                <option value="price-high">Price: High to Low</option>
+
+                <option value="model">Model</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 ">
+            {dummyCarData.map((car) => (
+              <CarCard key={car._id} car={car} />
+            ))}
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default Cars;

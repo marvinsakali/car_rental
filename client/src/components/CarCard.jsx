@@ -42,7 +42,7 @@ const CarCard = ({ car }) => {
           </div>
         </div>
 
-        <div className="mt-4 grid grid-cols-2 gap-y-2 text-gray-600 ">
+        <div className="mt-4 grid grid-cols-2 gap-y-2 gap-x-10 text-gray-600 ">
           <div className="flex items-center text-sm text-muted-foreground">
             <img src={assets.users_icon} alt="" className="h-4 mr-2" />
             <span> {car.seating_capacity} Seats</span>
