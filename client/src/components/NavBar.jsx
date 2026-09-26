@@ -23,7 +23,7 @@ const NavBar = ({ setShowLogin }) => {
       >
         
         {menuLinks.map((link, index) => (
-          <Link key={index} className="hover:border-b-2">{link.name}</Link>
+          <Link to={link.path} key={index} className="hover:border-b-2">{link.name}</Link>
         ))}
         
         <div className="hidden lg:flex gap-2 items-center rounded-full px-3 max-w-56 border border-borderColor">

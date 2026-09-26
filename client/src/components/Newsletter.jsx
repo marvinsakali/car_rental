@@ -3,7 +3,7 @@ import Title from "./Title";
 
 const Newsletter = () => {
   return (
-    <div className="flex flex-col items-center max-md:mx-4 justify-center text-center space-y-2 mb-40  py-24 md-px-6 lg:px-24 xl:px-32">
+    <div className="flex flex-col items-center max-md:mx-4 justify-center text-center space-y-2 mb-10  py-24 md:px-6 lg:px-24 xl:px-32">
       <div>
         <Title
           title="Never Miss a Deal!"

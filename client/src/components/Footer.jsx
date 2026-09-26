@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="px-6 xl:px-32 md:px-16 lg:px-24 mt-60 text-sm text-gray-500">
+    <div className="px-6 bg-light py-12 xl:px-32 md:px-16 lg:px-24 mt-6 text-sm text-gray-500">
       <div className="flex flex-wrap  border-borderColor border-b pb-6 justify-between gap-8">
         <div>
           <img src={assets.logo} className="h-8 md:h-9" alt="logo" />
@@ -62,7 +62,7 @@ const Footer = () => {
       justify-between py-5
       "
       >
-        <p>&copy; {new Date().getFullYear()}  All rights reserved</p>
+        <p >&copy; {new Date().getFullYear()}  All rights reserved</p>
       </div>
     </div>
   );

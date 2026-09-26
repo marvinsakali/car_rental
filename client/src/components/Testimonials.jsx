@@ -3,7 +3,7 @@ import Title from "./Title";
 
 export default function Testimonials() {
   return (
-    <div className="py-28 px-6 md:px-16 lg:px-24 xl:px-44 flex flex-col items-center justify-center">
+    <div className=" px-6 md:px-10 lg:px-24 xl:px-44 flex flex-col items-center justify-center">
       <div className="text-center mb-18">
         <Title
           title="What Our Customers Say"
