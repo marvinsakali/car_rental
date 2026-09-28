@@ -9,7 +9,7 @@ const CarCard = ({ car }) => {
     <div
       className="group rounded-xl transition-all duration-500 shadow-lg 
     hover:-translate-y-1 overflow-hidden cursor-pointer"
-    onClick={()=> {navigate(`/cars/${car._id}`)}}
+    onClick={()=> {navigate(`/car-details/${car._id}`)}}
     >
       <div className="relative h-48 overflow-hidden">
         <img

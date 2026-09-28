@@ -11,7 +11,9 @@ const Cars = () => {
       <header className="h-[70px] border-b border-gray-200 bg-white flex items-center">
         <div className="w-full max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
           <div className="rounded-md border border-borderColor px-2.5 py-1.5 flex justify-between gap-4 ">
-            <button className=" rounded-md bg-primary px-2 py-1 text-white cursor-pointer ">Buy Car</button>
+            <button className=" rounded-md bg-primary px-2 py-1 text-white cursor-pointer ">
+              Buy Car
+            </button>
             <button className="cursor-pointer">Rent car</button>
           </div>
           {/* Search */}
