@@ -21,11 +21,12 @@ const NavBar = ({ setShowLogin }) => {
           sm:flex-row right-0 items-start max-sm:border-t border-borderColor sm:items-center gap-4 transition-all duration-300 z-50
           max-sm:top-16 max-sm:p-4 ${location.pathname === "/" ? "bg-light" : "bg-white"} ${open ? "max-sm:translate-x-0" : "max-sm:translate-x-full"}`}
       >
-        
         {menuLinks.map((link, index) => (
-          <Link to={link.path} key={index} className="hover:border-b-2">{link.name}</Link>
+          <Link to={link.path} key={index} className="hover:border-b-2">
+            {link.name}
+          </Link>
         ))}
-        
+
         <div className="hidden lg:flex gap-2 items-center rounded-full px-3 max-w-56 border border-borderColor">
           <input
             type="text"
