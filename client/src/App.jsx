@@ -6,6 +6,7 @@ import CarDetails from "./pages/CarDetails";
 import Login from "./pages/Login";
 import MyBookings from "./pages/MyBookings";
 import Layout from "./pages/Layout";
+import Listing from "./pages/Listing";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/cars" element={<Cars />} />
+        <Route path="/owner" element={<Listing/>}/>
 
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
