@@ -79,7 +79,7 @@ const MyBookings = () => {
 
             <button
               type="button"
-              className="flex items-center justify-center gap-2 bg-green-700 hover:bg-green-800 text-white px-5 py-3 rounded-lg font-medium transition"
+              className="flex items-center justify-center gap-2 bg-primary hover:bg-primary-dull text-white px-5 py-3 rounded-lg font-medium transition-colors  cursor-pointer"
             >
               <Car className="w-5 h-5" />
               Book a car
@@ -95,7 +95,7 @@ const MyBookings = () => {
               onClick={() => setActiveTab(tab)}
               className={`px-5 py-2.5 rounded-lg text-sm font-medium transition ${
                 activeTab === tab
-                  ? "bg-green-700 text-white"
+                  ? "bg-primary text-white"
                   : "text-gray-500 hover:bg-gray-50"
               }`}
             >
@@ -210,7 +210,7 @@ const MyBookings = () => {
 
                       <button
                         type="button"
-                        className="flex items-center gap-1 px-4 py-2 rounded-lg bg-green-700 hover:bg-green-800 text-white text-sm font-medium transition"
+                        className="flex items-center gap-1 px-4 py-2 rounded-lg bg-primary hover:bg-primary-dull text-white text-sm font-medium transition"
                       >
                         Details
                         <ChevronRight className="w-4 h-4" />
