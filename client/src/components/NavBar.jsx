@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 const NavBar = ({ setShowLogin }) => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  
   const navigate = useNavigate();
   return (
     <div
@@ -33,6 +34,7 @@ const NavBar = ({ setShowLogin }) => {
             className="outline-none bg-transparent py-1.5
           w-full placeholder-gray-500"
             placeholder="search car"
+            value={search}
           />
           <img src={assets.search_icon} alt="search" />
         </div>

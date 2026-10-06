@@ -9,27 +9,32 @@ const Listing = () => {
     <div className="min-h-screen grid grid-cols-1 md:grid-cols-[280px_1fr]">
       {/* left sidebar */}
       <div className="border-r border-r-borderColor py-12 px-8 space-y-6">
-        <div className=" flex flex-col space-y-4">
-          <NavLink
-            to="dashboard"
-            className={({
-              isActive,
-            }) => `flex gap-4 items-center px-3 py-2 rounded-lg cursor-pointer
+        <div>
+          <h3 className="text-gray-500/90 mb-3 text-muted text-sm">
+            Main menu
+          </h3>
+          <div className=" flex flex-col space-y-4">
+            <NavLink
+              to="dashboard"
+              className={({
+                isActive,
+              }) => `flex gap-4 items-center px-3 py-2 rounded-lg cursor-pointer
           ${isActive ? "bg-light" : "text-gray-500/80"}`}
-          >
-            <img src={assets.dashboardIcon} className="w-5 h-5" alt="" />
-            <p className=" text-[14px]">Dashboard</p>
-          </NavLink>
-          <NavLink
-            to="add-car"
-            className={({
-              isActive,
-            }) => `flex gap-4 items-center px-3 py-2 rounded-lg cursor-pointer
+            >
+              <img src={assets.dashboardIcon} className="w-5 h-5" alt="" />
+              <p className=" text-[14px]">Dashboard</p>
+            </NavLink>
+            <NavLink
+              to="add-car"
+              className={({
+                isActive,
+              }) => `flex gap-4 items-center px-3 py-2 rounded-lg cursor-pointer
           ${isActive ? "bg-light" : "text-gray-500/80"}`}
-          >
-            <img src={assets.addIcon} className="w-5 h-5" alt="" />
-            <p className=" text-[14px]">Add Car</p>
-          </NavLink>
+            >
+              <img src={assets.addIcon} className="w-5 h-5" alt="" />
+              <p className=" text-[14px]">Add Car</p>
+            </NavLink>
+          </div>
         </div>
 
         <div className="">
@@ -58,17 +63,17 @@ const Listing = () => {
               <p className=" text-[14px]">My Listing</p>
             </NavLink>
             <NavLink
-            to="my-bookings"
+              to="my-bookings"
               className={({
                 isActive,
               }) => `flex gap-4 items-center px-3 py-2 rounded-lg cursor-pointer
           ${isActive ? "bg-light" : "text-gray-500/80"}`}
             >
               <CircleDotIcon className="w-5 h-5" />
-              <p className=" text-[14px]">Book Services</p>
+              <p className=" text-[14px]">Manage bookings</p>
             </NavLink>
             <NavLink
-            to="support"
+              to="support"
               className={({
                 isActive,
               }) => `flex gap-4 items-center px-3 py-2 rounded-lg cursor-pointer

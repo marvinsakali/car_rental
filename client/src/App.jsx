@@ -10,6 +10,7 @@ import Listing from "./pages/Listing";
 import MyListing from "./components/MyListing";
 import AddCar from "./components/AddCar";
 import Support from "./components/Support";
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
   return (
@@ -17,7 +18,6 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/cars" element={<Cars />} />
-        
 
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -26,7 +26,7 @@ const App = () => {
         </Route>
 
         <Route path="/owner" element={<Listing />}>
-          <Route path="dashboard" element={<h1>Dashboard</h1>} />
+          <Route path="dashboard" element={<Dashboard/>} />
           <Route path="my-listings" element={<MyListing />} />
           <Route path="add-car" element={<AddCar />} />
           {/* <Route path="search" element={<Search />} /> */}
