@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { assets, menuLinks } from "../assets/assets";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
-const NavBar = ({ setShowLogin }) => {
+const NavBar = ({ searchQuery, setSearchQuery}) => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
-  
   const navigate = useNavigate();
   return (
     <div
@@ -34,7 +33,8 @@ const NavBar = ({ setShowLogin }) => {
             className="outline-none bg-transparent py-1.5
           w-full placeholder-gray-500"
             placeholder="search car"
-            value={search}
+            value={searchQuery}
+            onChange={(e)=> setSearchQuery(e.target.value)}
           />
           <img src={assets.search_icon} alt="search" />
         </div>

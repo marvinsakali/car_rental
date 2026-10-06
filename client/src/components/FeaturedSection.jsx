@@ -2,9 +2,18 @@ import React from "react";
 import Title from "./Title";
 import { assets, dummyCarData } from "../assets/assets";
 import CarCard from "./CarCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 
 const FeaturedSection = () => {
+    const { searchQuery } = useOutletContext()
+    const filteredCars = dummyCarData.filter((car)=> {
+      const search = searchQuery.toLowerCase()
+
+      return (
+        car.model.toLowerCase().includes(search) ||
+        car.brand.toLowerCase().includes(search)
+      )
+    })
     const navigate = useNavigate()
   return (
     <div
@@ -20,7 +29,7 @@ const FeaturedSection = () => {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8  mt-18">
-        {dummyCarData.slice(0, 6).map((car) => (
+        {filteredCars.slice(0, 6).map((car) => (
           <div key={car._id}>
             <CarCard car={car} />
           </div>

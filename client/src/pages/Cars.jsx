@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Title from "../components/Title";
 import { assets, dummyCarData } from "../assets/assets";
 import CarCard from "../components/CarCard";
+import { useOutletContext } from "react-router-dom";
 
 const Cars = () => {
+  const [searchQuery, setSearchQuery] = useState("")
+  const filteredCar = dummyCarData.filter((car) => {
+    const search = searchQuery.toLowerCase()
+
+    return (
+      car.brand.toLowerCase().includes(search) ||
+      car.model.toLowerCase().includes(search)
+    )
+  })
   return (
     <div className="min-h-screen bg-slate-50">
       <header className="h-[70px] border-b border-gray-200 bg-white flex items-center">
@@ -14,7 +24,7 @@ const Cars = () => {
             <button className=" rounded-md bg-primary px-2 py-1 text-white cursor-pointer ">
               Buy Car
             </button>
-            <button className="cursor-pointer">Rent car</button>
+            <button className="cursor-pointer ">Rent car</button>
           </div>
           {/* Search */}
 
@@ -24,6 +34,8 @@ const Cars = () => {
             <input
               type="text"
               placeholder="Search for a car"
+              value={searchQuery}
+              onChange={(e)=> setSearchQuery(e.target.value)}
               className="w-full h-full text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none"
             />
 
@@ -220,7 +232,7 @@ const Cars = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 ">
-            {dummyCarData.map((car) => (
+            {filteredCar.map((car) => (
               <CarCard key={car._id} car={car} />
             ))}
           </div>

@@ -15,7 +15,7 @@ const Listing = () => {
           </h3>
           <div className=" flex flex-col space-y-4">
             <NavLink
-              to="dashboard"
+              to=""
               className={({
                 isActive,
               }) => `flex gap-4 items-center px-3 py-2 rounded-lg cursor-pointer

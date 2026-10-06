@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from "./pages/Home";
 import { Route, Routes } from "react-router-dom";
 import Cars from "./pages/Cars";
@@ -11,8 +11,10 @@ import MyListing from "./components/MyListing";
 import AddCar from "./components/AddCar";
 import Support from "./components/Support";
 import Dashboard from "./components/Dashboard";
+import ManageBookings from "./pages/ManageBookings";
 
 const App = () => {
+  
   return (
     <div>
       <Routes>
@@ -26,11 +28,11 @@ const App = () => {
         </Route>
 
         <Route path="/owner" element={<Listing />}>
-          <Route path="dashboard" element={<Dashboard/>} />
+          <Route path="" element={<Dashboard />} />
           <Route path="my-listings" element={<MyListing />} />
           <Route path="add-car" element={<AddCar />} />
           {/* <Route path="search" element={<Search />} /> */}
-          <Route path="my-bookings" element={<MyBookings />} />
+          <Route path="my-bookings" element={<ManageBookings />} />
           <Route path="support" element={<Support />} />
         </Route>
       </Routes>
