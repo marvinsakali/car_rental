@@ -8,13 +8,13 @@ import MyBookings from "./pages/MyBookings";
 import Layout from "./pages/Layout";
 import Listing from "./pages/Listing";
 import MyListing from "./components/MyListing";
-import AddCar from "./components/AddCar";
-import Support from "./components/Support";
+import AddCar from "./pages/AddCar";
+import Support from "./pages/Support";
 import Dashboard from "./components/Dashboard";
 import ManageBookings from "./pages/ManageBookings";
+import Settings from "./pages/Settiings";
 
 const App = () => {
-  
   return (
     <div>
       <Routes>
@@ -34,6 +34,7 @@ const App = () => {
           {/* <Route path="search" element={<Search />} /> */}
           <Route path="my-bookings" element={<ManageBookings />} />
           <Route path="support" element={<Support />} />
+          <Route path="settings" element={<Settings/>}/>  
         </Route>
       </Routes>
     </div>

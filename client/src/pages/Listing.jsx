@@ -1,14 +1,13 @@
 import React from "react";
 import { assets } from "../assets/assets";
-import { CircleDotIcon, ClipboardListIcon, Phone } from "lucide-react";
-import { NavLink, Outlet, Route, Routes } from "react-router-dom";
-import MyListing from "../components/MyListing";
+import { CircleDotIcon, ClipboardListIcon, Phone, Settings2Icon, SettingsIcon } from "lucide-react";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Listing = () => {
   return (
-    <div className="min-h-screen grid grid-cols-1 md:grid-cols-[280px_1fr]">
+    <div className=" min-h-screen grid grid-cols-1 md:grid-cols-[280px_1fr]">
       {/* left sidebar */}
-      <div className="border-r border-r-borderColor py-12 px-8 space-y-6">
+      <div className="md:sticky md:top-0 md:overflow-y-auto md:h-screen border-r border-r-borderColor py-12 px-8 space-y-6">
         <div>
           <h3 className="text-gray-500/90 mb-3 text-muted text-sm">
             Main menu
@@ -82,6 +81,16 @@ const Listing = () => {
               <Phone className="w-5 h-5" />
               <p className=" text-[14px]">Help center</p>
             </NavLink>
+            <NavLink
+              to="settings"
+              className={({
+                isActive,
+              }) => `flex gap-4 items-center px-3 py-2 rounded-lg cursor-pointer
+          ${isActive ? "bg-light" : "text-gray-500/80"}`}
+            >
+              <SettingsIcon className="w-5 h-5" />
+              <p className=" text-[14px]">Settings</p>
+            </NavLink>
           </div>
 
           <div className="mt-8 px-2 py-4 bg-light rounded-lg flex flex-col gap-4 items-center text-center text-xs justify-center ">
@@ -97,7 +106,7 @@ const Listing = () => {
       </div>
 
       {/* right  side */}
-      <main className="">
+      <main  className="">
         <Outlet />
       </main>
     </div>
