@@ -5,7 +5,6 @@ import FeaturedSection from "../components/FeaturedSection";
 import Cta from "../components/Cta";
 import Testimonials from "../components/Testimonials";
 import Newsletter from "../components/Newsletter";
-import Footer from "../components/Footer";
 
 const Home = () => {
   return (

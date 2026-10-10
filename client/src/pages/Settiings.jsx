@@ -117,7 +117,7 @@ const Settings = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex shrink-0 items-center gap-3 rounded-md px-4 py-3 text-sm font-medium transition ${
+                    className={`flex shrink-0 items-center cursor-pointer gap-3 rounded-md px-4 py-3 text-sm font-medium transition ${
                       isActive
                         ? "bg-black text-white"
                         : "text-gray-600 hover:bg-gray-100 hover:text-black"

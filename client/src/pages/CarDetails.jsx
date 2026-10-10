@@ -38,7 +38,7 @@ const CarDetails = () => {
         </div>
 
         {/*  MAIN PRODUCT SECTION */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
+        <div className="grid grid-cols-[auto-fit, repeat(minmax(13.75rem, 1fr))] gap-10 lg:gap-14">
           {/* LEFT: IMAGE GALLERY */}
           <div>
             {/* Main Image */}
